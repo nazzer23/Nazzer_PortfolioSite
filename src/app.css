@@ -84,7 +84,7 @@ footer {
 }
 
 .tooltip {
-    @apply invisible absolute rounded shadow-lg p-1 bg-primary-900 text-secondary-500 -mt-10;
+    @apply invisible absolute rounded shadow-lg p-1 px-2 bg-primary-900 text-white -mt-10;
 }
 
 .has-tooltip {
@@ -120,7 +120,7 @@ footer {
 }
 
 .github_projects .card .card-body {
-    @apply h-full border-t border-y-primary-900 py-2;
+    @apply h-full border-t border-y-secondary-800 py-2;
 }
 
 .github_projects .card .card-body p {
@@ -128,7 +128,7 @@ footer {
 }
 
 .github_projects .card .card-footer {
-    @apply pt-2 flex flex-row justify-end gap-1 border-t border-y-primary-900 tablet:flex-col tablet:items-end;
+    @apply pt-2 flex flex-row justify-end gap-1 border-t border-y-secondary-800 tablet:flex-col tablet:items-end;
 }
 
 .github_projects .card .card-footer .small {
