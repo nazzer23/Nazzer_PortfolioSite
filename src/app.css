@@ -103,8 +103,8 @@ footer {
     @apply h-full flex flex-col justify-between gap-2 w-full bg-slate-800/10 rounded-xl backdrop-blur-[3px] p-3 border-2 border-secondary-800/60 shadow-secondary-400 shadow-sm;
 }
 
-.github_projects a .card {
-    @apply hover:bg-gradient-to-b hover:from-primary-900 hover:to-primary-800 hover:shadow-lg hover:shadow-secondary-400;
+.github_projects a .card:hover {
+    @apply transition ease-in-out duration-300 bg-gradient-to-b from-primary-900 to-primary-800 shadow-lg shadow-secondary-400;
 }
 
 .github_projects .card .card-header {
