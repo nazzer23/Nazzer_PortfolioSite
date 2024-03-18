@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 .header {
-    @apply sticky top-0 flex items-center justify-center w-full my-3 tablet:my-0 z-10;
+    @apply sticky top-3 flex items-center justify-center w-full my-3 tablet:my-0 z-10;
 }
 
 .header .links {
