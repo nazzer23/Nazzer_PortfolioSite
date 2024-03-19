@@ -15,7 +15,7 @@
     let discordData = null;
     let discordColor = `transparent`
 
-    onMount(async () => {
+    const discordRequest = async () => {
         try {
             const request = await axios.get(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
             const response = request.data;
@@ -35,6 +35,14 @@
         } catch (e) {
             error = true;
         }
+    }
+
+    onMount(() => {
+        discordRequest();
+        const interval = setInterval(async () => discordRequest(), 60000);
+        return async () => {
+            clearInterval(interval);
+        };
     });
 
 
@@ -47,14 +55,14 @@
         now.tz(MY_TIMEZONE); // your time zone, not necessarily the server's
         var centralOffset = now.utcOffset();
         var diffInMinutes = localOffset - centralOffset;
-        let hourAheadBehind = diffInMinutes/60;
-        if(hourAheadBehind > 0) {
+        let hourAheadBehind = diffInMinutes / 60;
+        if (hourAheadBehind > 0) {
             hourAheadBehindLabel = `${Math.abs(hourAheadBehind)}h behind`
-        } else if(hourAheadBehind < 0) {
+        } else if (hourAheadBehind < 0) {
             hourAheadBehindLabel = `${Math.abs(hourAheadBehind)}h ahead`
-        } else if(hourAheadBehind > 0 && hourAheadBehind < 1) {
+        } else if (hourAheadBehind > 0 && hourAheadBehind < 1) {
             hourAheadBehindLabel = `${Math.abs(hourAheadBehind) * 60}m behind`;
-        } else if(hourAheadBehind < 0 && hourAheadBehind > -1) {
+        } else if (hourAheadBehind < 0 && hourAheadBehind > -1) {
             hourAheadBehindLabel = `${Math.abs(hourAheadBehind) * 60}m ahead`;
         }
         currentTime = now.format('LTS');
@@ -64,14 +72,14 @@
             now.tz(MY_TIMEZONE); // your time zone, not necessarily the server's
             var centralOffset = now.utcOffset();
             var diffInMinutes = localOffset - centralOffset;
-            let hourAheadBehind = diffInMinutes/60;
-            if(hourAheadBehind > 0) {
+            let hourAheadBehind = diffInMinutes / 60;
+            if (hourAheadBehind > 0) {
                 hourAheadBehindLabel = `${Math.abs(hourAheadBehind)}h behind`
-            } else if(hourAheadBehind < 0) {
+            } else if (hourAheadBehind < 0) {
                 hourAheadBehindLabel = `${Math.abs(hourAheadBehind)}h ahead`
-            } else if(hourAheadBehind > 0 && hourAheadBehind < 1) {
+            } else if (hourAheadBehind > 0 && hourAheadBehind < 1) {
                 hourAheadBehindLabel = `${Math.abs(hourAheadBehind) * 60}m behind`;
-            } else if(hourAheadBehind < 0 && hourAheadBehind > -1) {
+            } else if (hourAheadBehind < 0 && hourAheadBehind > -1) {
                 hourAheadBehindLabel = `${Math.abs(hourAheadBehind) * 60}m ahead`;
             }
             currentTime = now.format('LTS');
@@ -136,7 +144,9 @@
                     {:else}
                         Online
                     {/if}
-                    <p>The current time is {currentTime} {#if hourAheadBehindLabel}<span class="text-slate-600"> - {hourAheadBehindLabel}</span>{/if}</p>
+                    <p>The current time is {currentTime}
+                        {#if hourAheadBehindLabel}<span class="text-slate-600"> - {hourAheadBehindLabel}</span>{/if}
+                    </p>
                 </div>
 
 
