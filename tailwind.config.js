@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ['./index.html', './src/**/*.{html,js,svelte,ts}'],
+    content: ['./index.html', './src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
     theme: {
         extend: {
             fontFamily: {
@@ -53,6 +53,8 @@ export default {
     },
     plugins: [
         require("@designbycode/tailwindcss-text-stroke"),
+        require('flowbite/plugin')
     ],
+    darkMode: 'class',
 }
 

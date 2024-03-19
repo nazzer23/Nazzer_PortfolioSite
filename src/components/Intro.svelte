@@ -7,7 +7,7 @@
         const anchorId = new URL(link.href).hash.replace('#', '')
         const anchor = document.getElementById(anchorId)
         window.scrollTo({
-            top: anchor.offsetTop - 30,
+            top: anchor.offsetTop - 60,
             behavior: 'smooth'
         })
     }

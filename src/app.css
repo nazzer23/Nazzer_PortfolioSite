@@ -26,7 +26,11 @@ body {
 }
 
 main {
-    @apply flex flex-col gap-2 items-center tablet:w-full;
+    @apply flex flex-col gap-6 items-center tablet:w-full;
+}
+
+main section:not(:first-child) {
+    @apply border-t border-t-secondary-900/40 shadow-lg shadow-secondary-800/20 rounded-2xl;
 }
 
 main section {
@@ -84,7 +88,7 @@ footer {
 }
 
 .tooltip {
-    @apply invisible absolute rounded shadow-lg p-1 px-2 bg-primary-900 text-white -mt-10;
+    @apply hidden absolute rounded shadow-lg p-1 px-2 bg-primary-900 text-white -mt-10;
 }
 
 .has-tooltip {
@@ -92,7 +96,7 @@ footer {
 }
 
 .has-tooltip:hover .tooltip {
-    @apply visible z-50;
+    @apply block z-50;
 }
 
 .github_projects {
