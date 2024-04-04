@@ -7,6 +7,9 @@ export default defineConfig({
   plugins: [svelte(), splitVendorChunkPlugin()],
   css: [postcss],
   build: {
+    modulePreload: {
+      polyfill:true
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {
