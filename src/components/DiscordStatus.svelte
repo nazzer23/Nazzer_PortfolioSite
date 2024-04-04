@@ -9,7 +9,7 @@
     import axios from "axios";
 
     const DISCORD_ID = `165584933149081600`;
-    const MY_TIMEZONE = "Europe/London";
+    const MY_TIMEZONE = "Europe/Berlin";
 
     let error = false;
     let discordData = null;
@@ -133,7 +133,7 @@
         />
         <div class="space-y-1 font-medium w-full">
             <h1>{discordData?.discord_user?.username}</h1>
-            <div class="text-sm text-gray-500 flex flex-col gap-1">
+            <div class="text-sm text-primary-100 flex flex-col gap-1">
                 <div class="flex tablet:flex-col gap-2">
                     {#if discordData?.discord_status !== 'online'}
                         {#if discordData?.discord_status === "dnd"}
@@ -145,7 +145,7 @@
                         Online
                     {/if}
                     <p>The current time is {currentTime}
-                        {#if hourAheadBehindLabel}<span class="text-slate-600"> - {hourAheadBehindLabel}</span>{/if}
+                        {#if hourAheadBehindLabel}<span class="text-secondary-200"> - {hourAheadBehindLabel}</span>{/if}
                     </p>
                 </div>
 

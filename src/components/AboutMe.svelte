@@ -1,5 +1,4 @@
 <script>
-  import programmer_animated from "../assets/programmer-animate.svg";
   const discordStatusPromise = import("./DiscordStatus.svelte");
 </script>
 

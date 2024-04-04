@@ -1,5 +1,5 @@
 <script type="ts">
-    import programmer_animated from '../assets/programmer-animate.svg';
+    import programmer_animated from '../assets/programmer-animate.svg?raw';
     import SocialIcons from "./SocialIcons.svelte";
     function handleAnchorClick (event) {
         event.preventDefault()
@@ -24,7 +24,7 @@
             <a class="hover:bg-primary-800/20 border-l-4 border-secondary-400 bg-primary-900/30 hover:transition hover:shadow-lg hover:shadow-primary-900 rounded-md w-fit py-1 px-2" href="#projects" on:click={handleAnchorClick}>view my projects</a>
         </div>
         <div class="w-[50%] tablet:w-full ">
-            <img src={programmer_animated} alt="Animated Developer"/>
+            {@html programmer_animated}
         </div>
     </div>
 </section>
