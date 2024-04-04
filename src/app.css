@@ -76,7 +76,12 @@ footer {
 }
 
 .social-icons {
-    @apply flex flex-row gap-2;
+    @apply flex flex-row gap-4 p-2;
+}
+
+
+.social-icons a {
+    @apply h-fit w-fit;
 }
 
 .social-icons a:hover i {
@@ -84,7 +89,7 @@ footer {
 }
 
 .social-icons i {
-    @apply text-secondary-600 text-xl;
+    @apply text-secondary-600 text-xl mobile:text-3xl h-fit w-fit;
 }
 
 .tooltip {

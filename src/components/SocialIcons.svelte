@@ -1,5 +1,6 @@
 <script>
-    import '../../node_modules/@flaticon/flaticon-uicons/css/all/all.css';
+    import '../../node_modules/@flaticon/flaticon-uicons/css/solid/rounded.css';
+    import '../../node_modules/@flaticon/flaticon-uicons/css/brands/all.css';
 </script>
 
 <div class="social-icons">
@@ -12,7 +13,7 @@
         </a>
     </div>
     <div class="has-tooltip">
-        <span class='tooltip '>See my GitHub Projects</span>
+        <span class='tooltip'>See my GitHub Projects</span>
         <a href="https://github.com/nazzer23/">
             <span class="sr-only">My GitHub Profile</span>
             <i class="fi fi-brands-github"></i>

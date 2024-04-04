@@ -9,7 +9,7 @@
     import axios from "axios";
 
     const DISCORD_ID = `165584933149081600`;
-    const MY_TIMEZONE = "Europe/Berlin";
+    const MY_TIMEZONE = "Europe/London";
 
     let error = false;
     let discordData = null;
